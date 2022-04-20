@@ -1,22 +1,25 @@
 <?php
 session_start();
-    include("connection.php");
-    include("functions.php");
+    require("private/autoload.php");
+    //include("functions.php");
 
    if($_SERVER['REQUEST_METHOD'] == "POST")
    {
        //something was posted
       $username =  $_POST['uname'];
       $p_word =  $_POST['psw'];
-
+      $email = $_POST['email'];
+      if(!preg_match("/^[\w\-]+@[\w\-]+.[\w\-]+$/", $email))
+      {
+          $Error = "Please enter a valid email!";
+      }
       if(!empty($username) && !empty($p_word) && !is_numeric($username))
       {
         //save to database
-        $login_id = random_num(20);
-        $query = "INSERT INTO employee_login (login_id, username, p_word) VALUES ('$login_id', '$username', '$p_word')";
+        //$login_id = random_num(20);
+        $query = "INSERT INTO employee_login (username, p_word) VALUES ('$username', '$p_word') " ; " INSERT INTO employee_info (employee_email) VALUES ('$email')";
 
         mysqli_query($conn, $query);
-
         header("Location: login.php");
         die;
 
@@ -41,7 +44,7 @@ session_start();
   body {font-family: Arial, Helvetica, sans-serif;}
   form {border: 3px solid #f1f1f1;}
 
-  input[type=text], input[type=password] {
+  input[type=text], input[type=password], input[type=email] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -103,14 +106,24 @@ span.psw {
     <h2>Signup</h2>
 
     <form method="post">
-
+    <div><?php 
+        if(isset($Error) && $Error != "")
+        {
+            echo $Error;
+        }
+        ?>
+    </div>
     <div class="container">
         <label for="uname"><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="uname" required>
 
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
-            
+
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="email" required>
+                    
+
         <button type="submit">Signup</button>
         <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
