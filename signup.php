@@ -6,6 +6,14 @@ session_start();
    if($_SERVER['REQUEST_METHOD'] == "POST")
    {
        //something was posted
+      $fname = $_POST['fname'];
+      $minit = $_POST['minit'];
+      $lname = $_POST['lname'];
+      $phone = $_POST['tel'];
+      $address = $_POST['addr'];
+      $city = $_POST['city'];
+      $state = $_POST['state'];
+      $dob = $_POST['dob'];
       $username =  $_POST['uname'];
       $p_word =  $_POST['psw'];
       $email = $_POST['email'];
@@ -16,10 +24,12 @@ session_start();
       if(!empty($username) && !empty($p_word) && !is_numeric($username))
       {
         //save to database
-        //$login_id = random_num(20);
-        $query = "INSERT INTO employee_login (username, p_word) VALUES ('$username', '$p_word') " ; " INSERT INTO employee_info (employee_email) VALUES ('$email')";
-
-        mysqli_query($conn, $query);
+        $employee_id = random_num(5);
+        $query = "INSERT INTO employee_login (username, p_word) VALUES ('$username', '$p_word') ;
+         INSERT INTO employee_info (employee_id, employee_fname, employee_minit, employee_lname, employee_phone, employee_email, employe_address, employee_city, employee_state, employee_dob) 
+         VALUES ('$employee_id', '$fname', '$minit', '$lname', '$phone', '$email', '$address', '$city', '$state', '$dob');";
+                         
+        mysqli_multi_query($conn, $query);
         header("Location: login.php");
         die;
 
@@ -44,7 +54,7 @@ session_start();
   body {font-family: Arial, Helvetica, sans-serif;}
   form {border: 3px solid #f1f1f1;}
 
-  input[type=text], input[type=password], input[type=email] {
+  input[type=text], input[type=password], input[type=email], input[type=tel], input[type=date] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -114,11 +124,36 @@ span.psw {
         ?>
     </div>
     <div class="container">
+
+        <label for="fname"><b>First Name</b></label>
+        <input type="text" placeholder="Enter First Name" name="fname" required>
+
+        <label for="minit"><b>Middle Initial</b></label>
+        <input type="text" placeholder="Enter Middle Initial" name="minit" required>
+
+        <label for="lname"><b>Last Name</b></label>
+        <input type="text" placeholder="Enter Last Name" name="lname" required>
+
+        <label for="tel"><b>Phone Number</b></label>
+        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter Phone # (Ex: 123-456-7890)" name="tel" required>
+
+        <label for="addr"><b>Home Address</b></label>
+        <input type="text" placeholder="Enter Home Address" name="addr" required>
+
+        <label for="city"><b>City</b></label>
+        <input type="text" placeholder="Enter City" name="city" required>
+
+        <label for="state"><b>State</b></label>
+        <input type="text" placeholder="Enter State" name="state" required>
+
+        <label for="dob"><b>Date Of Birth</b></label>
+        <input type="date" placeholder="Enter DOB (Format: MM-DD-YYYY)" name="dob" required>
+
         <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+        <input type="text" placeholder="Create Username" name="uname" required>
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input type="password" placeholder="Create Password" name="psw" required>
 
         <label for="email"><b>Email</b></label>
         <input type="email" placeholder="Enter Email" name="email" required>
