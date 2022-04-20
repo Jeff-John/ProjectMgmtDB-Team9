@@ -1,6 +1,6 @@
 <?php
-    require("connection.php");
-    require("functions.php");
+    require("private/connection.php");
+    require("private/functions.php");
 
 
 ?>

@@ -7,8 +7,8 @@ session_start();
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
         //something was posted
-    $username =  $_POST['uname'];
-    $p_word =  $_POST['psw'];
+    $username =  user_input($_POST['uname']);
+    $p_word =  user_input($_POST['psw']);
 
     if(!empty($username) && !empty($p_word) && !is_numeric($username))
     {
@@ -64,7 +64,7 @@ session_start();
 }
 
 button {
-  background-color: #04AA6D;
+  background-color: #406fee;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -113,7 +113,7 @@ span.psw {
 </style>
 </head>
 <body>
-    <h2>Login</h2>
+    <h2>Company Name: Login</h2>
 
     <form method="post">
 

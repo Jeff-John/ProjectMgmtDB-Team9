@@ -14,6 +14,7 @@
 <body>
 
     <a href="logout.php">Logout</a>
+    <a href="#">Update</a>
     <h1 >This is the index page</h1>
 
     <br>

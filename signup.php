@@ -6,17 +6,17 @@ session_start();
    if($_SERVER['REQUEST_METHOD'] == "POST")
    {
        //something was posted
-      $fname = $_POST['fname'];
-      $minit = $_POST['minit'];
-      $lname = $_POST['lname'];
-      $phone = $_POST['tel'];
-      $address = $_POST['addr'];
-      $city = $_POST['city'];
-      $state = $_POST['state'];
-      $dob = $_POST['dob'];
-      $username =  $_POST['uname'];
-      $p_word =  $_POST['psw'];
-      $email = $_POST['email'];
+      $fname = user_input($_POST['fname']);
+      $minit = user_input($_POST['minit']);
+      $lname = user_input($_POST['lname']);
+      $phone = user_input($_POST['tel']);
+      $address = user_input($_POST['addr']);
+      $city = user_input($_POST['city']);
+      $state = user_input($_POST['state']);
+      $dob = user_input($_POST['dob']);
+      $username = user_input($_POST['uname']);
+      $p_word = user_input($_POST['psw']);
+      $email = user_input($_POST['email']);
       if(!preg_match("/^[\w\-]+@[\w\-]+.[\w\-]+$/", $email))
       {
           $Error = "Please enter a valid email!";
@@ -64,7 +64,7 @@ session_start();
 }
 
 button {
-  background-color: #04AA6D;
+  background-color: #406fee;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
