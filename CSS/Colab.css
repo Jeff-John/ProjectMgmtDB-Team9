@@ -1,0 +1,39 @@
+
+div.viewport > div.TeamPage {
+  width: inherit;
+  height: inherit;
+  background: whitesmoke;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  transition: margin-left .5s;
+  padding: 16px;
+
+}
+
+div.TeamPage > table.Colab {
+  display: block;
+  overflow-x: auto;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  border: 1px solid;
+  background: seashell;
+  grid-row: 1/6;
+  grid-column: 1 / 4;
+}
+
+table.Colab td.test {
+  background: coral;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+td.head
+{
+  background-color: orange;
+  position: absolute;
+  border: 3px solid black;
+  border-radius: 8px;
+  width: 15%;
+}

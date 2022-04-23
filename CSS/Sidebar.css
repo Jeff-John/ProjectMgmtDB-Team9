@@ -1,0 +1,74 @@
+
+.sidebar {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  transition: 0.5s;
+  overflow-x: hidden;
+  padding-top: 60px;
+  white-space: nowrap;
+}
+
+.sidebar a {
+  padding-left: 24px;
+  padding-bottom: 30px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+main .sidebar {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.material-symbols-outlined,
+.icon-text {
+  vertical-align: middle;
+}
+
+.material-symbols-outlined.md-36 {
+  padding-bottom: 3px;
+  margin-right: 30px;
+  font-size: 36px;
+
+}
+#main {
+  padding: 16px;
+  margin-left: 85px;
+  transition: margin-left 0.5s;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+table.TaskList{
+  margin-left: 90px;
+  margin-top: -25px;
+}
+
+table.TaskList td{
+  font-family: Arial, serif;
+  font-weight: bold;
+  background: linear-gradient(to top left , #6e529d 10%,#d97b93 100%);
+  border: 1px solid black;
+  border-radius: 6px;
+  width: 130px;
+}
