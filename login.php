@@ -27,6 +27,7 @@ session_start();
                 {
 
                     $_SESSION['login_id'] = $user_data['login_id'];
+                    $_SESSION['username'] = $user_data['username'];
                     header("Location: index.php");
                     die;
                 }
@@ -113,7 +114,7 @@ span.psw {
 </style>
 </head>
 <body>
-    <h2>Company Name: Login</h2>
+    <h2>Login</h2>
 
     <form method="post">
 
