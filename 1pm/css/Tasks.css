@@ -1,0 +1,26 @@
+
+#TeamPage > table.Tasks {
+  border: 1px solid black;
+  overflow-y: scroll;
+  grid-row: 31/51;
+  grid-column: 1/15;
+}
+
+table.Tasks td{
+  background: lightseagreen;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+table.Tasks td.TasksHead{
+  position: sticky;
+  top: 0;
+  background: lightblue;
+  border: 1px solid black;
+  border-radius: 2px;
+  height: 10%;
+}
+
+
+
+
