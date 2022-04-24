@@ -38,8 +38,6 @@
 
 
   <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
-    <a href="logout.php">logout</a>
-    <a><?php if (isset($_SESSION['username'])) {echo "Hi, " .  $_SESSION['username'];}?></a>
     <a href="#" onclick="openCal()"><span><i class="material-symbols-outlined md-36">
       calendar_month</i><span class="icon-text">Calendar</span></a>
     <a href="#" onclick="openTeam()"><span><i class="material-symbols-outlined md-36">
