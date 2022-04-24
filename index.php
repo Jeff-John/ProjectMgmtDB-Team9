@@ -57,6 +57,7 @@
     </div>
   </div>
 
+  <script src="js/functions.js"></script>
   <script src="js/Calendar.js"></script>
   <script src="js/Colab.js"></script>
   <script src="js/Tasks.js"></script>
