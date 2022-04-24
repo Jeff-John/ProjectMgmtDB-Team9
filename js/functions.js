@@ -2,7 +2,7 @@ var ajax = new XMLHttpRequest();
 var method = "GET";
 var url = "data.php";
 var asynchronous = true;
-var colabevent = [];
+var userValues = [];
 var count = 0;
 ajax.open(method, url, asynchronous);
 
@@ -17,7 +17,7 @@ ajax.onreadystatechange = function()
 
     for (var a = 0; a < data.length; a++) 
     {
-      colabevent.push(data[a].task_desc);
+      userValues.push(data[a].task_desc);
     }
   }
 }
