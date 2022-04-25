@@ -1,7 +1,7 @@
-div.TeamPage > table.Chat {
+#TeamPage > table.Chat {
   border: 1px solid black;
   grid-column: 2/4;
-  grid-row:  6;
+  grid-row:  3/5;
 
   display: block;
   overflow-x: auto;

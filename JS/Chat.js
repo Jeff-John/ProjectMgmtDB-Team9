@@ -1,30 +1,3 @@
-let chatLog = [
-  "According to all known laws of aviation,",
-  "there is no way a bee should be able to fly.",
-  "Its wings are too small to get its fat little body off the ground.",
-  "The bee, of course, flies anyway",
-  "because bees don't care what humans think is impossible.",
-  "Yellow, black. Yellow, black. Yellow, black. Yellow, black.",
-    "According to all known laws of aviation,",
-  "there is no way a bee should be able to fly.",
-  "Its wings are too small to get its fat little body off the ground.",
-  "The bee, of course, flies anyway",
-  "because bees don't care what humans think is impossible.",
-  "Yellow, black. Yellow, black. Yellow, black. Yellow, black.",
-    "According to all known laws of aviation,",
-  "there is no way a bee should be able to fly.",
-  "Its wings are too small to get its fat little body off the ground.",
-  "The bee, of course, flies anyway",
-  "because bees don't care what humans think is impossible.",
-  "Yellow, black. Yellow, black. Yellow, black. Yellow, black.",
-    "According to all known laws of aviation,",
-  "there is no way a bee should be able to fly.",
-  "Its wings are too small to get its fat little body off the ground.",
-  "The bee, of course, flies anyway",
-  "because bees don't care what humans think is impossible.",
-  "Yellow, black. Yellow, black. Yellow, black. Yellow, black.",
-  "Ooh, black and yellow! Let's shake it up a little."
-]
 
 function resetTable(){
   while(tableChat.hasChildNodes())
@@ -44,7 +17,7 @@ chatBox.onkeydown = function(e){
    }
 };
 
-function generateTableTasks(tableChat) {
+function generateTableChat(tableChat) {
   let head = tableChat.insertRow().insertCell();
   head.appendChild(document.createTextNode("Discussion Board"))
   head.className = "ChatHead"
@@ -59,13 +32,8 @@ function generateTableTasks(tableChat) {
   tableChat.scrollTo(10,1000)
 }
 
-
-
-let tableChat = document.querySelector("table.Chat");
-generateTableTasks(tableChat);
-
 function addToChatLog() {
-  boxvalue = document.getElementById("TypeHere").value;
+  let boxvalue = document.getElementById("TypeHere").value;
   chatLog.push(boxvalue);
   return false;
 }

@@ -69,6 +69,8 @@ function makeEvents(array, date) {
     let cell = row.insertCell();
     cell.appendChild(document.createTextNode(date));
     cell.className = "date"
+    cell.onclick = function (){openCalSub()};
+
 
     for (key in array) {
       if (key != null) {
@@ -100,3 +102,20 @@ let table = document.querySelector("table.calendar");
 let data = Object.keys(mountains[0]);
 generateTableHead(table, data);
 generateTable(table, mountains);
+
+
+function calSub(){
+  let text = document.querySelector("input.calText")
+  let date = document.querySelector("input.calDate")
+  let time1 = document.querySelector("input.calTimeFrom")
+  let time2 = document.querySelector("input.calTimeTo")
+  let calTeam = document.querySelector("select.calTeam")
+
+  console.log(date.valueAsDate)
+
+  text.value = "";
+  let box = document.querySelector("div.CalInput")
+  box.style = "visibility: hidden;";
+}
+
+function openCalSub(){ document.querySelector("div.CalInput").style = "visibility: visible;" }

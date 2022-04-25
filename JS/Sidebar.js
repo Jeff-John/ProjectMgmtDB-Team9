@@ -14,24 +14,41 @@ function toggleSidebar() {
   }
 }
 
-function openCal() {
-  document.querySelector("div.calPage").style.visibility = "visible";
-  document.querySelector("div.TeamPage").style.visibility = "hidden";
+let taskList = ["Project 1", "Project 2","Project 3","This","That"]
+
+function closeAll(){
+    document.querySelector("div.calPage").style.visibility = "hidden";
+    document.querySelector("div.UserData").style.visibility = "hidden";
+    for (const [task, value] of taskList.entries())
+      document.querySelector(`div.TeamPage${task+1}`).style.visibility = "hidden";
 }
 
-function openTeam() {
-  document.querySelector("div.calPage").style.visibility = "hidden";
-  document.querySelector("div.TeamPage").style.visibility = "visible";
+function openDat(){closeAll(); document.querySelector("div.UserData").style.visibility = "visible";}
+
+
+function openCal() {closeAll(); document.querySelector("div.calPage").style.visibility = "visible";}
+
+function openTeam() {closeAll(); document.querySelector("div.TeamPage1").style.visibility = "visible";}
+
+function openi(i){document.querySelector(`div.TeamPage${i}`).style.visibility = "visible";
 }
-
-
-taskList = ["Project 1", "Project 2","Project 3","This","That"]
 
 function generateTableTaskList(tableTaskList) {
+  let i = 0;
   for (const task of taskList) {
+    i+=1
     let cell = tableTaskList.insertRow().insertCell();
     cell.appendChild(document.createTextNode(task))
-  }}
+    cell.className = `${i}`
+    cell.onclick = function (){
+      closeAll()
+      openi(cell.className)
+  }
+  }
+  let cell = tableTaskList.insertRow().insertCell();
+    cell.appendChild(document.createTextNode("New Task"))
+    cell.className = "NewTask"
+}
 
 let tableTaskList = document.querySelector("table.TaskList");
 generateTableTaskList(tableTaskList);
