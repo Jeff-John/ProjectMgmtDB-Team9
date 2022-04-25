@@ -19,8 +19,6 @@ function range2(arr, y){
 
 function generateTableColab(tableColab, userValues, min, max, scale=5) {
 
-
-
   let timeframe = range2(Array.range(min-30, max+1), scale)
   for (const [key, value] of Object.entries(userValues)) {
     let row = tableColab.insertRow();

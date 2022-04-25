@@ -107,6 +107,7 @@ div.viewport {
   width: 90vw;
   height: 90vh;
   position: relative;
+  justify-content: center;
 }
 
 div.viewport > div.calPage {

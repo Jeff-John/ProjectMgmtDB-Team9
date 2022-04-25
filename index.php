@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="css/Tasks.css">
   <link rel="stylesheet" href="css/Chat.css">
   <link rel="stylesheet" href="css/Sidebar.css">
+  <link rel="stylesheet" href="css/Profile.css">
   <link rel="stylesheet" href="css/UserData.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined">
 
@@ -37,8 +38,9 @@
 </head>
 <body>
 
-
   <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+    <a href="#" onclick="openPro()"><span><i class="material-symbols-outlined md-36">
+      account_circle</i><span class="icon-text">Profile</span></a>
     <a href="#" onclick="openDat()"><span><i class="material-symbols-outlined md-36">
       monitoring</i><span class="icon-text">User Data</span></a>
     <a href="#" onclick="openCal()"><span><i class="material-symbols-outlined md-36">
@@ -49,6 +51,74 @@
   </div>
 
   <div id="main" class="viewport" >
+
+    <div class="Profile">
+      <div class="circle"></div>
+      <p class="letter">K</p>
+      <p class="name">Kenneth Valdez</p>
+
+      <div class="card-body">
+        <div class="row">
+          <h6 class="head">Full Name</h6>
+          <div class="tail"> Kenneth Valdez</div>
+        </div>
+        <hr>
+        <div class="row">
+          <h6 class="head">Date of Birth</h6>
+          <div class="tail"> 12/02/2000</div>
+        </div>
+        <hr>
+        <div class="row">
+          <h6 class="head">Email</h6>
+          <div class="tail"> fip@jukmuh.al</div>
+        </div>
+        <hr>
+        <div class="row">
+          <h6 class="head">Phone</h6>
+          <div class="tail"> (239) 816-9029</div>
+        </div>
+        <hr>
+        <div class="row">
+          <h6 class="head">Address</h6>
+          <div class="tail"> Bay Area, San Francisco, CA</div>
+        </div>
+      </div>
+      <table class="AllTasks"></table>
+      <svg class="ProfileChart" >
+          <polyline
+           fill="none"
+           stroke="#0074d9"
+           stroke-width="2"
+           points="
+             00,120
+             20,60
+             40,80
+             60,20
+             80,80
+             100,80
+             120,60
+             140,100
+             160,90
+             180,80
+             200, 110
+             220, 10
+             240, 70
+             260, 100
+             280, 100
+             300, 40
+             320, 0
+             340, 100
+             360, 100
+             380, 120
+             400, 60
+             420, 70
+             440, 80
+           "
+          />
+
+</svg>
+
+    </div>
 
     <div class="UserData" >
       <table class="UserData" ></table>
@@ -87,6 +157,7 @@
   <script src="js/Sidebar.js"></script>
   <script src="js/UserData.js"></script>
   <script src="js/NewTeams.js"></script>
+  <script src="js/Profile.js"></script>
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>

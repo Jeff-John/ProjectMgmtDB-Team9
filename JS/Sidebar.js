@@ -19,16 +19,15 @@ let taskList = ["Project 1", "Project 2","Project 3","This","That"]
 function closeAll(){
     document.querySelector("div.calPage").style.visibility = "hidden";
     document.querySelector("div.UserData").style.visibility = "hidden";
+    document.querySelector("div.Profile").style.visibility = "hidden";
     for (const [task, value] of taskList.entries())
       document.querySelector(`div.TeamPage${task+1}`).style.visibility = "hidden";
 }
 
 function openDat(){closeAll(); document.querySelector("div.UserData").style.visibility = "visible";}
-
-
 function openCal() {closeAll(); document.querySelector("div.calPage").style.visibility = "visible";}
-
 function openTeam() {closeAll(); document.querySelector("div.TeamPage1").style.visibility = "visible";}
+function openPro() {closeAll(); document.querySelector("div.Profile").style.visibility = "visible";}
 
 function openi(i){document.querySelector(`div.TeamPage${i}`).style.visibility = "visible";
 }

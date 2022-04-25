@@ -1,8 +1,9 @@
-div.TeamPage > table.Tasks {
+
+#TeamPage > table.Tasks {
   border: 1px solid black;
-  grid-column: 1/2;
-  grid-row:6;
   overflow-y: scroll;
+  grid-row: 31/51;
+  grid-column: 1/15;
 }
 
 table.Tasks td{
@@ -19,6 +20,7 @@ table.Tasks td.TasksHead{
   border-radius: 2px;
   height: 10%;
 }
+
 
 
 
